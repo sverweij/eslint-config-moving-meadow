@@ -1,0 +1,35 @@
+{
+  "name": "eslint-config-moving-meadow",
+  "version": "0.0.0",
+  "description": "eslint configuration for moving meadow projects",
+  "main": "eslint-config.js",
+  "files": [
+    "*.js",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "lint": "prettier --loglevel warn --check *.js *.json",
+    "lint:prettier:fix": "prettier --loglevel warn --write *.js *.json",
+    "update-dependencies": "npm-run-all upem:update upem:install lint:prettier:fix",
+    "upem:install": "npm install",
+    "upem:update": "npm outdated --json | upem"
+  },
+  "keywords": [],
+  "author": "Sander Verweij (https://sverweij.github.io/)",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "1.19.1",
+    "upem": "3.1.2"
+  },
+  "peerDependencies": {
+    "eslint-config-prettier": ">=6.10.0",
+    "eslint-plugin-budapestian": ">=1.0.0",
+    "eslint-plugin-import": ">=2.20.0",
+    "eslint-plugin-mocha": ">=6.3.0",
+    "eslint-plugin-node": ">=11.0.0",
+    "eslint-plugin-security": ">=1.4.0",
+    "eslint-plugin-unicorn": ">=15.0.1"
+  }
+}
