@@ -20,6 +20,6 @@ yarn add -D eslint-plugin-budapestian eslint-plugin-import eslint-plugin-mocha e
 
 ## Flare'n status section
 
-![linting & test coverage - linux](https://github.com/sverweij/eslint-config-moving-meadow/workflows/linting%20&%20test%20coverage%20-%20linux/badge.svg)
+[![lint](https://github.com/sverweij/eslint-config-moving-meadow/workflows/lint/badge.svg)](https://github.com/sverweij/eslint-config-moving-meadow/actions?query=workflow%3Alint)
 [![npm stable version](https://img.shields.io/npm/v/eslint-config-moving-meadow.svg?logo=npm)](https://npmjs.com/package/eslint-config-moving-meadow)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
