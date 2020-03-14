@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-moving-meadow",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "eslint configuration for moving meadow projects",
   "main": "eslint-config.js",
   "files": [
