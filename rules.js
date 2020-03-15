@@ -320,6 +320,7 @@ module.exports = {
     "unicorn/throw-new-error": "error",
 
     // budapestian notation rules
-    "budapestian/parameter-pattern": "error"
+    "budapestian/parameter-pattern": "error",
+    "budapestian/global-constant-pattern": "error"
   }
 };
