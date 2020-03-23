@@ -5,21 +5,31 @@ eslint configuration for some of my projects. You might not want to use this
 
 ## Install
 
-```sh
-npm install --save-dev eslint-plugin-budapestian eslint-plugin-import eslint-plugin-mocha eslint-plugin-node eslint-plugin-security eslint-plugin-unicorn@15 eslint-config-prettier eslint-config-moving-meadow
-```
-
-or
+When using mocha :coffee: :
 
 ```sh
-yarn add -D eslint-plugin-budapestian eslint-plugin-import eslint-plugin-mocha eslint-plugin-node eslint-plugin-security eslint-plugin-unicorn@15 eslint-config-prettier eslint-config-moving-meadow
+npm install --save-dev eslint-plugin-mocha eslint-plugin-budapestian eslint-plugin-import eslint-plugin-node eslint-plugin-security eslint-plugin-unicorn@15 eslint-config-prettier eslint-config-moving-meadow
 ```
+
+When using jest :black_joker: :
+
+```sh
+npm install --save-dev eslint-plugin-jest eslint-plugin-budapestian eslint-plugin-import eslint-plugin-node eslint-plugin-security eslint-plugin-unicorn@15 eslint-config-prettier eslint-config-moving-meadow
+```
+
+When using `yarn` replace `npm install --save-dev` with `yarn add -D`
 
 > - The @15 for unicorn is necessary because several of my projects still support
 >   node 8 and eslint-plugin-unicorn > 15 doesn't anymore.
 
+## Features
+
+Will automatically detect whether your project uses `mocha` or `jest` and will
+apply either the `eslint-plugin-mocha` or the `eslint-plugin-jest` rules (or both
+of them if your project uses both of them :open_mouth:).
+
 ## Flare'n status section
 
-[![lint](https://github.com/sverweij/eslint-config-moving-meadow/workflows/lint/badge.svg)](https://github.com/sverweij/eslint-config-moving-meadow/actions?query=workflow%3Alint)
+[![lint and test](https://github.com/sverweij/eslint-config-moving-meadow/workflows/lint%20and%20test/badge.svg)](https://github.com/sverweij/eslint-config-moving-meadow/actions?query=workflow%3A%22lint+and+test%22)
 [![npm stable version](https://img.shields.io/npm/v/eslint-config-moving-meadow.svg?logo=npm)](https://npmjs.com/package/eslint-config-moving-meadow)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
