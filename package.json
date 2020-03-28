@@ -18,7 +18,7 @@
     "lint:fix": "npm-run-all lint:fix:*",
     "lint:fix:eslint": "eslint --config eslint-config.js --fix src test",
     "lint:fix:prettier": "prettier --loglevel warn --write *.js *.json",
-    "update-dependencies": "npm-run-all upem:update upem:install lint:prettier:fix",
+    "update-dependencies": "npm-run-all upem:update upem:install lint:fix",
     "upem:install": "npm install",
     "upem:update": "npm outdated --json | upem",
     "test": "jest --coverage"
@@ -37,11 +37,11 @@
   "devDependencies": {
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.10.1",
-    "eslint-plugin-budapestian": "1.1.1",
+    "eslint-plugin-budapestian": "1.2.0",
     "eslint-plugin-import": "2.20.1",
     "eslint-plugin-jest": "23.8.2",
     "eslint-plugin-mocha": "6.3.0",
-    "eslint-plugin-node": "11.0.0",
+    "eslint-plugin-node": "11.1.0",
     "eslint-plugin-security": "1.4.0",
     "eslint-plugin-unicorn": "15.0.1",
     "jest": "24.9.0",
@@ -51,25 +51,25 @@
   },
   "peerDependencies": {
     "eslint-config-prettier": ">=6.10.0",
-    "eslint-plugin-budapestian": ">=1.1.1",
+    "eslint-plugin-budapestian": ">=1.2.0",
     "eslint-plugin-import": ">=2.20.0",
     "eslint-plugin-mocha": ">=6.3.0",
-    "eslint-plugin-node": ">=11.0.0",
+    "eslint-plugin-node": ">=11.1.0",
     "eslint-plugin-security": ">=1.4.0",
     "eslint-plugin-unicorn": ">=15.0.1"
   },
   "upem": {
     "donotup": [
       {
-        "name": "eslint-plugin-unicorn",
+        "package": "eslint-plugin-unicorn",
         "because": "eslint-plugin-unicorn 16 and up don't support node 8 anymore, while moving-meadow still does"
       },
       {
-        "name": "jest",
-        "because": "jest 25 and up borks on install on node 8 (while sort 'officially' still supported). As we want to run ci on node 8 => stay downgraded on jest 24 for as long as that is necessary."
+        "package": "jest",
+        "because": "jest 25 and up borks on install on node 8 (while sort of 'officially' still supported). As we want to run ci on node 8 => stay downgraded on jest 24 for as long as that is necessary."
       },
       {
-        "name": "prettier",
+        "package": "prettier",
         "because": "prettier 2 and up don't support node 8 anymore, while moving-meadow still does"
       }
     ]
