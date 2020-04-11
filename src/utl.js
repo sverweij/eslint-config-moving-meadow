@@ -1,5 +1,4 @@
 const fs = require("fs");
-const process = require("process");
 
 function isDevelopmentDependency(pManifest, pDependencyName) {
   // eslint-disable-next-line security/detect-object-injection

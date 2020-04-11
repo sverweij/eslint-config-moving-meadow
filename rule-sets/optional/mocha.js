@@ -19,6 +19,9 @@ module.exports = {
     "mocha/no-top-level-hooks": "error", // disallow top-level hooks
     "mocha/valid-suite-description": "error", // match suite descriptions against a pre-configured regular expression
     "mocha/valid-test-description": "off", // match test descriptions against a pre-configured regular expression
-    "mocha/no-async-describe": "error"
+    "mocha/no-async-describe": "error",
+    "mocha/no-return-from-async": "warn",
+    "mocha/no-setup-in-describe": "off",
+    "mocha/prefer-arrow-callback": "warn"
   }
 };
