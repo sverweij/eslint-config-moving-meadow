@@ -46,6 +46,8 @@ module.exports = {
     "unicorn/prefer-trim-start-end": "error",
     "unicorn/prefer-type-error": "error",
     "unicorn/prevent-abbreviations": "error",
-    "unicorn/throw-new-error": "error"
+    "unicorn/throw-new-error": "error",
+    "unicorn/prefer-exponentiation-operator": "off", // => use core prefer-exponentiation-operator instead
+    "unicorn/regex-shorthand": "off" // => renamed to unicorn/better-regex
   }
 };
