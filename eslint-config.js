@@ -4,11 +4,11 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module",
     ecmaFeatures: {
-      jsx: false
-    }
+      jsx: false,
+    },
   },
   env: {
     node: true,
-    es6: true
-  }
+    es6: true,
+  },
 };

@@ -1,8 +1,9 @@
+/* eslint-disable max-lines-per-function */
 const path = require("path");
 const {
   getManifest,
   isDevelopmentDependency,
-  conditionallyExtendRuleSet
+  conditionallyExtendRuleSet,
 } = require("../src/utl");
 
 describe("utl.getManifest", () => {
@@ -25,10 +26,8 @@ describe("utl.getManifest", () => {
     ).toStrictEqual({ devDependencies: {} });
   });
   it("takes the current working directory's package.json as the default", () => {
-      expect(
-          getManifest().name
-      ).toBe("eslint-config-moving-meadow")
-  })
+    expect(getManifest().name).toBe("eslint-config-moving-meadow");
+  });
 });
 
 describe("utl.isDevDependency", () => {
@@ -60,14 +59,14 @@ describe("utl.conditionallyExtendRuleSet", () => {
   it("empty rule set, with empty optional rule set name that doesn't occur in the manifest => {}", () => {
     expect(
       conditionallyExtendRuleSet({}, "optional", {
-        devDependencies: { exists: "1.2.3" }
+        devDependencies: { exists: "1.2.3" },
       })
     ).toStrictEqual({});
   });
   it("empty rule set, with empty optional rule set name that occurs in the manifest => extend on the optional rule est", () => {
     expect(
       conditionallyExtendRuleSet({}, "optional", {
-        devDependencies: { exists: "1.2.3", optional: "4.5.6" }
+        devDependencies: { exists: "1.2.3", optional: "4.5.6" },
       })
     ).toStrictEqual({ extends: ["./rule-sets/optional/optional.js"] });
   });
@@ -77,17 +76,17 @@ describe("utl.conditionallyExtendRuleSet", () => {
         {
           extends: ["security"],
           plugins: ["security"],
-          rules: { "security/be-smart": "error" }
+          rules: { "security/be-smart": "error" },
         },
         "optional",
         {
-          devDependencies: { exists: "1.2.3", optional: "4.5.6" }
+          devDependencies: { exists: "1.2.3", optional: "4.5.6" },
         }
       )
     ).toStrictEqual({
       extends: ["security", "./rule-sets/optional/optional.js"],
       plugins: ["security"],
-      rules: { "security/be-smart": "error" }
+      rules: { "security/be-smart": "error" },
     });
   });
   it("non-empty rule set, with an optional rule set name that occurs in the default manifest => extend on the optional rule set", () => {
@@ -96,14 +95,14 @@ describe("utl.conditionallyExtendRuleSet", () => {
         {
           extends: ["security"],
           plugins: ["security"],
-          rules: { "security/be-smart": "error" }
+          rules: { "security/be-smart": "error" },
         },
         "jest"
       )
     ).toStrictEqual({
       extends: ["security", "./rule-sets/optional/jest.js"],
       plugins: ["security"],
-      rules: { "security/be-smart": "error" }
+      rules: { "security/be-smart": "error" },
     });
   });
   it("non-empty rule set, with an optional rule set name that does not occur in the default manifest => rule set remains as-is", () => {
@@ -112,14 +111,14 @@ describe("utl.conditionallyExtendRuleSet", () => {
         {
           extends: ["security"],
           plugins: ["security"],
-          rules: { "security/be-smart": "error" }
+          rules: { "security/be-smart": "error" },
         },
         "mocha"
       )
     ).toStrictEqual({
       extends: ["security"],
       plugins: ["security"],
-      rules: { "security/be-smart": "error" }
+      rules: { "security/be-smart": "error" },
     });
   });
 });

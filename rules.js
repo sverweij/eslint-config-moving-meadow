@@ -7,8 +7,8 @@ let lRuleSet = {
     "./rule-sets/mandatory/node",
     "./rule-sets/mandatory/import",
     "./rule-sets/mandatory/unicorn",
-    "./rule-sets/mandatory/budapestian"
-  ]
+    "./rule-sets/mandatory/budapestian",
+  ],
 };
 
 module.exports = conditionallyExtendRuleSet(

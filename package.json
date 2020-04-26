@@ -14,22 +14,22 @@
   "scripts": {
     "check": "npm-run-all lint test config-completeness",
     "config-completeness": "npx eslint-find-rules --deprecated --unused rules.js",
-    "lint:eslint": "eslint --config eslint-config.js --fix src test",
-    "lint:fix:eslint": "eslint --config eslint-config.js --fix src test",
-    "lint:fix:prettier": "prettier --loglevel warn --write *.js *.json",
+    "lint:eslint": "eslint --config eslint-config.js --fix src test *.js",
+    "lint:fix:eslint": "eslint --config eslint-config.js --fix src test *.js",
+    "lint:fix:prettier": "prettier --loglevel log --write src test *.js *.json",
     "lint:fix": "npm-run-all lint:fix:*",
-    "lint:prettier": "prettier --loglevel warn --check *.js *.json",
+    "lint:prettier": "prettier --loglevel log --check src test *.js *.json",
     "lint": "npm-run-all lint:eslint lint:prettier",
     "test": "jest --coverage",
     "unused": "npm-run-all unused:*",
-    "unused:budapestian": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/budapestian.js | node tools/eslint-find-rules-output-to-json.js",
-    "unused:core": "npx eslint-find-rules --unused rule-sets/mandatory/core.js | node tools/eslint-find-rules-output-to-json.js",
-    "unused:import": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/import.js | node tools/eslint-find-rules-output-to-json.js",
-    "unused:jest": "npx eslint-find-rules --no-core --unused rule-sets/optional/jest.js | node tools/eslint-find-rules-output-to-json.js",
-    "unused:mocha": "npx eslint-find-rules --no-core --unused rule-sets/optional/mocha.js | node tools/eslint-find-rules-output-to-json.js",
-    "unused:node": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/node.js | node tools/eslint-find-rules-output-to-json.js",
-    "unused:security": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/security.js | node tools/eslint-find-rules-output-to-json.js",
-    "unused:unicorn": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/unicorn.js | node tools/eslint-find-rules-output-to-json.js",
+    "unused:budapestian": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/budapestian.js | node tools/eslint-find-rules-output-to-json.mjs",
+    "unused:core": "npx eslint-find-rules --unused rule-sets/mandatory/core.js | node tools/eslint-find-rules-output-to-json.mjs",
+    "unused:import": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/import.js | node tools/eslint-find-rules-output-to-json.mjs",
+    "unused:jest": "npx eslint-find-rules --no-core --unused rule-sets/optional/jest.js | node tools/eslint-find-rules-output-to-json.mjs",
+    "unused:mocha": "npx eslint-find-rules --no-core --unused rule-sets/optional/mocha.js | node tools/eslint-find-rules-output-to-json.mjs",
+    "unused:node": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/node.js | node tools/eslint-find-rules-output-to-json.mjs",
+    "unused:security": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/security.js | node tools/eslint-find-rules-output-to-json.mjs",
+    "unused:unicorn": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/unicorn.js | node tools/eslint-find-rules-output-to-json.mjs",
     "update-dependencies": "npm-run-all upem:update upem:install lint:fix",
     "upem:install": "npm install",
     "upem:update": "npm outdated --json | upem"
@@ -47,7 +47,7 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "6.8.0",
-    "eslint-config-prettier": "6.10.1",
+    "eslint-config-prettier": "6.11.0",
     "eslint-find-rules": "3.4.0",
     "eslint-plugin-budapestian": "1.2.0",
     "eslint-plugin-import": "2.20.2",
@@ -55,37 +55,21 @@
     "eslint-plugin-mocha": "6.3.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-security": "1.4.0",
-    "eslint-plugin-unicorn": "15.0.1",
+    "eslint-plugin-unicorn": "19.0.1",
     "get-stream": "5.1.0",
-    "jest": "24.9.0",
+    "jest": "25.4.0",
     "npm-run-all": "4.1.5",
-    "prettier": "1.19.1",
+    "prettier": "2.0.5",
     "upem": "3.1.2"
   },
   "peerDependencies": {
-    "eslint-config-prettier": ">=6.10.0",
+    "eslint-config-prettier": "6.11.0",
     "eslint-plugin-budapestian": ">=1.2.0",
     "eslint-plugin-import": ">=2.20.0",
     "eslint-plugin-mocha": ">=6.3.0",
     "eslint-plugin-node": ">=11.1.0",
     "eslint-plugin-security": ">=1.4.0",
-    "eslint-plugin-unicorn": ">=15.0.1"
-  },
-  "upem": {
-    "donotup": [
-      {
-        "package": "eslint-plugin-unicorn",
-        "because": "eslint-plugin-unicorn 16 and up don't support node 8 anymore, while moving-meadow still does"
-      },
-      {
-        "package": "jest",
-        "because": "jest 25 and up borks on install on node 8 (while sort of 'officially' still supported). As we want to run ci on node 8 => stay downgraded on jest 24 for as long as that is necessary."
-      },
-      {
-        "package": "prettier",
-        "because": "prettier 2 and up don't support node 8 anymore, while moving-meadow still does"
-      }
-    ]
+    "eslint-plugin-unicorn": "19.0.1"
   },
   "jest": {
     "clearMocks": true,
@@ -112,6 +96,6 @@
     }
   },
   "engines": {
-    "node": "^8.10||^10||^12||>=13"
+    "node": "^10||^12||>=13"
   }
 }

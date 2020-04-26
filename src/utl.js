@@ -47,5 +47,5 @@ function conditionallyExtendRuleSet(
 module.exports = {
   isDevelopmentDependency,
   getManifest,
-  conditionallyExtendRuleSet
+  conditionallyExtendRuleSet,
 };
