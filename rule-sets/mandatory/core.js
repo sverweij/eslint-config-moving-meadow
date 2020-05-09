@@ -19,6 +19,7 @@ module.exports = {
     "no-irregular-whitespace": "error",
     "no-obj-calls": "error",
     "no-regex-spaces": "error",
+    "no-useless-backreference": "warn",
     "no-sparse-arrays": "error",
     "no-unexpected-multiline": "error",
     "no-unreachable": "error",
@@ -33,6 +34,7 @@ module.exports = {
     complexity: ["warn", 6],
     "consistent-return": "error",
     "default-case": "error",
+    "default-case-last": "error",
     "dot-notation": "error",
     eqeqeq: "error",
     "guard-for-in": "error",
@@ -103,16 +105,7 @@ module.exports = {
     "no-use-before-define": "error",
 
     // Node.js and CommonJS
-    "callback-return": "error",
-    "global-require": "off", // caught with node/global-require
-    "handle-callback-err": "error",
-    "no-mixed-requires": "error",
-    "no-new-require": "error",
-    "no-path-concat": "error",
-    "no-process-env": "error",
-    "no-process-exit": "error",
-    "no-restricted-modules": "error",
-    "no-sync": "off",
+    // these all moved to eslint-plugin-node
 
     // Stylistic Issues
     camelcase: "off",
@@ -159,6 +152,7 @@ module.exports = {
     "no-duplicate-imports": "error",
     "no-new-symbol": "error",
     "no-restricted-imports": "error",
+    "no-restricted-exports": "off",
     "no-this-before-super": "error",
     "no-useless-computed-key": "error",
     "no-useless-constructor": "error",
@@ -175,7 +169,7 @@ module.exports = {
     "getter-return": "error",
     "no-async-promise-executor": "warn",
     "no-await-in-loop": "warn",
-    "no-buffer-constructor": "warn",
+    // "no-buffer-constructor": "warn", // deprecated, should bin in node/... but isn't yet
     "no-compare-neg-zero": "warn",
     "no-constructor-return": "warn",
     "no-dupe-else-if": "error",
@@ -281,6 +275,6 @@ module.exports = {
     "template-tag-spacing": "off",
     "wrap-iife": "off",
     "wrap-regex": "off",
-    "yield-star-spacing": "off"
-  }
+    "yield-star-spacing": "off",
+  },
 };

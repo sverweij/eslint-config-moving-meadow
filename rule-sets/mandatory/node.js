@@ -22,7 +22,7 @@ module.exports = {
     "node/no-extraneous-import": "error",
     "node/no-missing-import": "error",
     "node/no-mixed-requires": "error",
-    "node/no-new-require": "warn",
+    "node/no-new-require": "error",
     "node/no-path-concat": "error",
     "node/no-process-env": "warn",
     "node/no-process-exit": "error",
@@ -38,6 +38,6 @@ module.exports = {
     "node/prefer-global/url": "warn",
     "node/prefer-global/url-search-params": "warn",
     "node/prefer-promises/dns": "warn",
-    "node/prefer-promises/fs": "off"
-  }
+    "node/prefer-promises/fs": "off",
+  },
 };
