@@ -25,6 +25,7 @@ module.exports = {
     "unicorn/no-unreadable-array-destructuring": "error",
     "unicorn/no-unsafe-regex": "error",
     "unicorn/no-unused-properties": "error",
+    "unicorn/no-useless-undefined": "warn",
     "unicorn/no-zero-fractions": "error",
     "unicorn/number-literal-case": "error",
     "unicorn/prefer-add-event-listener": "error",
@@ -47,12 +48,12 @@ module.exports = {
     "unicorn/prefer-type-error": "error",
     "unicorn/prevent-abbreviations": "error",
     "unicorn/throw-new-error": "error",
-    "unicorn/prefer-exponentiation-operator": "off", // => use core prefer-exponentiation-operator instead
-    "unicorn/regex-shorthand": "off", // => renamed to unicorn/better-regex
     "unicorn/no-null": "warn",
     "unicorn/prefer-number-properties": "error",
     "unicorn/prefer-replace-all": "off", // => replaceAll is a tc39 proposal. Not available in node <= 14
     "unicorn/prefer-set-has": "off", // => questionable performance improvement to use set.has over array.includes ()
     "unicorn/string-content": "off", // => needs some creativity to pass it patterns & replacements
+    "unicorn/no-reduce": "off", // => IMO the reasoning behind this rule is flawed => off
+    "unicorn/prefer-optional-catch-binding": "off", // => try {} catch {} doesn't work everywhere yet
   },
 };

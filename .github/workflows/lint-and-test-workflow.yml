@@ -51,13 +51,13 @@ jobs:
         shell: bash
         env:
           CI: true
-      - name: config-completeness
-        run: |
-          node --version
-          npm run config-completeness
-        shell: bash
-        env:
-          CI: true
+      # - name: config-completeness
+      #   run: |
+      #     node --version
+      #     npm run config-completeness
+      #   shell: bash
+      #   env:
+      #     CI: true
       - name: test
         run: |
           node --version
