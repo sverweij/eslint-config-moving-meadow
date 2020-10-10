@@ -1,6 +1,6 @@
 const { conditionallyExtendRuleSet } = require("./src/utl");
 
-let lRuleSet = {
+let gRuleSet = {
   extends: [
     "./rule-sets/mandatory/core",
     "./rule-sets/mandatory/security",
@@ -12,6 +12,6 @@ let lRuleSet = {
 };
 
 module.exports = conditionallyExtendRuleSet(
-  conditionallyExtendRuleSet(lRuleSet, "mocha"),
+  conditionallyExtendRuleSet(gRuleSet, "mocha"),
   "jest"
 );

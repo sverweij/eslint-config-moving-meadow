@@ -22,6 +22,7 @@ module.exports = {
     "mocha/no-async-describe": "error",
     "mocha/no-return-from-async": "warn",
     "mocha/no-setup-in-describe": "off",
-    "mocha/prefer-arrow-callback": "warn"
+    "mocha/prefer-arrow-callback": "warn",
+    "mocha/no-exports": "error"
   }
 };

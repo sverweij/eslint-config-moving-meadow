@@ -11,6 +11,7 @@ module.exports = {
     "unicorn/explicit-length-check": "error",
     "unicorn/filename-case": ["error", { case: "kebabCase" }],
     "unicorn/import-index": "off",
+    "unicorn/import-style": "off",
     "unicorn/new-for-builtins": "off", // conflicts with security/detect-non-literal-regexp, apparently
     "unicorn/no-abusive-eslint-disable": "error",
     "unicorn/no-array-instanceof": "error",
@@ -21,6 +22,7 @@ module.exports = {
     "unicorn/no-keyword-prefix": "error",
     "unicorn/no-nested-ternary": "error",
     "unicorn/no-new-buffer": "error",
+    "unicorn/no-object-as-default-parameter": "warn",
     "unicorn/no-process-exit": "error",
     "unicorn/no-unreadable-array-destructuring": "error",
     "unicorn/no-unsafe-regex": "error",
@@ -28,6 +30,7 @@ module.exports = {
     "unicorn/no-useless-undefined": "warn",
     "unicorn/no-zero-fractions": "error",
     "unicorn/number-literal-case": "error",
+    "unicorn/prefer-array-find": "error",
     "unicorn/prefer-add-event-listener": "error",
     "unicorn/prefer-dataset": "error",
     "unicorn/prefer-event-key": "error",

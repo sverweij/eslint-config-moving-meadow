@@ -112,7 +112,7 @@ module.exports = {
     "consistent-this": "error",
     "func-names": "error",
     "func-style": ["error", "declaration", { allowArrowFunctions: true }],
-    "id-blacklist": "off",
+    // "id-blacklist": "off", // renamed to id-denylist
     "id-length": "off",
     "id-match": "off",
     "max-classes-per-file": ["warn", 1],
@@ -199,6 +199,7 @@ module.exports = {
     "require-await": "warn",
     "symbol-description": "error",
     "unicode-bom": ["error", "never"],
+    "id-denylist": "off", // as we don't have any id's we want to deny
 
     // stylistic stuff that will be handled by prettier anyway
     "array-bracket-newline": "off",
