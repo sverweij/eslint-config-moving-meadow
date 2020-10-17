@@ -21,3 +21,4 @@ isolate-*-v8.log
 npm-debug.log
 yarn-error.log
 package-lock.json
+*.tgz

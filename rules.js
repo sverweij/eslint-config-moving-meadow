@@ -7,7 +7,7 @@ let gRuleSet = {
     "./rule-sets/mandatory/node",
     "./rule-sets/mandatory/import",
     "./rule-sets/mandatory/unicorn",
-    "./rule-sets/mandatory/budapestian",
+    "plugin:budapestian/recommended",
   ],
 };
 
