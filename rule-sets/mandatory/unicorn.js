@@ -14,9 +14,9 @@ module.exports = {
     "unicorn/import-style": "off",
     "unicorn/new-for-builtins": "off", // conflicts with security/detect-non-literal-regexp, apparently
     "unicorn/no-abusive-eslint-disable": "error",
-    "unicorn/no-array-instanceof": "error",
+    "unicorn/no-instanceof-array": "error",
     "unicorn/no-console-spaces": "error",
-    "unicorn/no-fn-reference-in-iterator": "off", // personal preference to allow this
+    "unicorn/no-array-callback-reference": "off", // personal preference to allow this
     "unicorn/no-for-loop": "error",
     "unicorn/no-hex-escape": "error",
     "unicorn/no-keyword-prefix": "error",
@@ -32,31 +32,38 @@ module.exports = {
     "unicorn/number-literal-case": "error",
     "unicorn/prefer-array-find": "error",
     "unicorn/prefer-add-event-listener": "error",
-    "unicorn/prefer-dataset": "error",
-    "unicorn/prefer-event-key": "error",
-    "unicorn/prefer-flat-map": "error",
+    "unicorn/prefer-dom-node-dataset": "error",
+    "unicorn/prefer-keyboard-event-key": "error",
+    "unicorn/prefer-array-flat-map": "error",
     "unicorn/prefer-includes": "error",
     "unicorn/prefer-modern-dom-apis": "error",
     "unicorn/prefer-negative-index": "error",
-    "unicorn/prefer-node-append": "error",
-    "unicorn/prefer-node-remove": "error",
+    "unicorn/prefer-dom-node-append": "error",
+    "unicorn/prefer-dom-node-remove": "error",
     "unicorn/prefer-query-selector": "error",
     "unicorn/prefer-reflect-apply": "error",
-    // "unicorn/prefer-replace-all": "error", // supported from unicorn 16 on
     "unicorn/prefer-spread": "error",
-    "unicorn/prefer-starts-ends-with": "error",
+    "unicorn/prefer-string-starts-ends-with": "error",
     "unicorn/prefer-string-slice": "error",
-    "unicorn/prefer-text-content": "error",
-    "unicorn/prefer-trim-start-end": "error",
+    "unicorn/prefer-dom-node-text-content": "error",
+    "unicorn/prefer-string-trim-start-end": "error",
     "unicorn/prefer-type-error": "error",
     "unicorn/prevent-abbreviations": "error",
     "unicorn/throw-new-error": "error",
     "unicorn/no-null": "warn",
     "unicorn/prefer-number-properties": "error",
-    "unicorn/prefer-replace-all": "off", // => replaceAll is a tc39 proposal. Not available in node <= 14
+    "unicorn/prefer-string-replace-all": "off", // => replaceAll is a tc39 proposal. Not available in node <= 14
     "unicorn/prefer-set-has": "off", // => questionable performance improvement to use set.has over array.includes ()
     "unicorn/string-content": "off", // => needs some creativity to pass it patterns & replacements
-    "unicorn/no-reduce": "off", // => IMO the reasoning behind this rule is flawed => off
+    "unicorn/no-array-reduce": "off", // => IMO the reasoning behind this rule is flawed => off
     "unicorn/prefer-optional-catch-binding": "off", // => try {} catch {} doesn't work everywhere yet
+    "unicorn/no-lonely-if": "warn",
+    "unicorn/empty-brace-spaces": "off", // formatting => leave that to prettier
+    "unicorn/prefer-date-now": "warn",
+    "unicorn/prefer-ternary": "off",
+    "unicorn/numeric-separators-style": "off", // formatting => leave that to prettier
+    "unicorn/prefer-math-trunc": "warn",
+    "unicorn/prefer-array-some": "warn",
+    "unicorn/prefer-default-parameters": "off",
   },
 };

@@ -200,6 +200,7 @@ module.exports = {
     "symbol-description": "error",
     "unicode-bom": ["error", "never"],
     "id-denylist": "off", // as we don't have any id's we want to deny
+    "no-unsafe-optional-chaining": "warn",
 
     // stylistic stuff that will be handled by prettier anyway
     "array-bracket-newline": "off",
@@ -244,6 +245,7 @@ module.exports = {
     "no-extra-parens": "off",
     "no-extra-semi": "off",
     "no-floating-decimal": "off",
+    "no-nonoctal-decimal-escape": "warn",
     "no-mixed-operators": "off",
     "no-mixed-spaces-and-tabs": "off",
     "no-multi-assign": "off",
