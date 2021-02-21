@@ -46,12 +46,12 @@
   "homepage": "https://github.com/sverweij/eslint-config-moving-meadow",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "7.16.0",
-    "eslint-config-prettier": "7.1.0",
+    "eslint": "7.20.0",
+    "eslint-config-prettier": "8.0.0",
     "eslint-find-rules": "3.6.1",
     "eslint-plugin-budapestian": "2.3.0",
     "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-jest": "24.1.3",
+    "eslint-plugin-jest": "24.1.5",
     "eslint-plugin-mocha": "8.0.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-security": "1.4.0",
@@ -64,13 +64,17 @@
   },
   "peerDependencies": {
     "eslint": ">=7.6.0",
-    "eslint-config-prettier": ">=6.12.0",
+    "eslint-config-prettier": ">=8.0.0",
     "eslint-plugin-budapestian": ">=2.3.0",
     "eslint-plugin-import": ">=2.22.0",
     "eslint-plugin-mocha": ">=8.0.0",
     "eslint-plugin-node": ">=11.1.0",
     "eslint-plugin-security": ">=1.4.0",
     "eslint-plugin-unicorn": ">=22.0.0"
+  },
+  "upem": {
+    "donotup": "eslint-plugin-unicorn",
+    "because": "there's some rules in 28 I don't need in my life right now"
   },
   "jest": {
     "clearMocks": true,

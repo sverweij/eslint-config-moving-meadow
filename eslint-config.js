@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["./rules.js", "eslint-config-prettier"],
+  extends: ["./rules.js", "prettier"],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: "module",
