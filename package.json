@@ -46,21 +46,21 @@
   "homepage": "https://github.com/sverweij/eslint-config-moving-meadow",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "7.20.0",
-    "eslint-config-prettier": "8.0.0",
-    "eslint-find-rules": "3.6.1",
-    "eslint-plugin-budapestian": "2.3.0",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-jest": "24.1.5",
-    "eslint-plugin-mocha": "8.0.0",
+    "eslint": "8.11.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-find-rules": "4.1.0",
+    "eslint-plugin-budapestian": "3.0.1",
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-jest": "26.1.2",
+    "eslint-plugin-mocha": "^9.0.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-security": "1.4.0",
-    "eslint-plugin-unicorn": "25.0.0",
-    "get-stream": "6.0.0",
-    "jest": "26.6.3",
+    "eslint-plugin-unicorn": "41.0.1",
+    "get-stream": "6.0.1",
+    "jest": "27.5.1",
     "npm-run-all": "4.1.5",
-    "prettier": "2.2.1",
-    "upem": "5.0.0"
+    "prettier": "2.6.0",
+    "upem": "^7.0.0"
   },
   "peerDependencies": {
     "eslint": ">=7.6.0",
@@ -73,8 +73,18 @@
     "eslint-plugin-unicorn": ">=22.0.0"
   },
   "upem": {
-    "donotup": "eslint-plugin-unicorn",
-    "because": "there's some rules in 28 I don't need in my life right now"
+    "policies": [
+      {
+        "package": "eslint-plugin-mocha",
+        "policy": "wanted",
+        "because": "10 dropped support for node 12, which we still use"
+      },
+      {
+        "package": "eslint-plugin-unicorn",
+        "policy": "pin",
+        "because": "there's some rules in 28 I don't need in my life right now"
+      }
+    ]
   },
   "jest": {
     "clearMocks": true,
@@ -101,6 +111,6 @@
     }
   },
   "engines": {
-    "node": "^10||^12||>=13"
+    "node": "^12||^14||>=16"
   }
 }

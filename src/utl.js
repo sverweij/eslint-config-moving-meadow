@@ -37,6 +37,7 @@ function conditionallyExtendRuleSet(
   let lReturnValue = { ...pRuleSet };
 
   if (isDevelopmentDependency(pManifest, pOptionalRuleSetName)) {
+    // eslint-disable-next-line unicorn/prefer-spread
     lReturnValue.extends = (pRuleSet.extends || []).concat(
       `./rule-sets/optional/${pOptionalRuleSetName}.js`
     );

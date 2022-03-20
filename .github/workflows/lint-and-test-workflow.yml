@@ -12,13 +12,12 @@ jobs:
       fail-fast: false
       matrix:
         node-version:
-          - 10.x
           - 12.x
           - 14.x
-          - 15.x
+          - 16.x
+          - 17.x
         platform:
           - ubuntu-latest
-          - windows-latest
 
     runs-on: ${{matrix.platform}}
 
@@ -39,6 +38,8 @@ jobs:
       - name: install & build
         run: |
           node --version
+          # hack to prevent engine compatibility stuff for a depDev that we don't use on the CI
+          npm install upem@6
           npm install
         shell: bash
         env:
@@ -47,6 +48,7 @@ jobs:
         run: |
           node --version
           npm run lint
+        if: matrix.platform == 'ubuntu-latest' && matrix.node-version == '16.x'
         shell: bash
         env:
           CI: true
