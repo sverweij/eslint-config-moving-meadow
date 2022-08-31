@@ -23,6 +23,7 @@
     "test": "jest --coverage",
     "unused": "npm-run-all unused:*",
     "unused:core": "npx eslint-find-rules --unused rule-sets/mandatory/core.js | node tools/eslint-find-rules-output-to-json.mjs",
+    "unused:comments": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/comments.js | node tools/eslint-find-rules-output-to-json.mjs",
     "unused:import": "npx eslint-find-rules --no-core --unused rule-sets/mandatory/import.js | node tools/eslint-find-rules-output-to-json.mjs",
     "unused:jest": "npx eslint-find-rules --no-core --unused rule-sets/optional/jest.js | node tools/eslint-find-rules-output-to-json.mjs",
     "unused:mocha": "npx eslint-find-rules --no-core --unused rule-sets/optional/mocha.js | node tools/eslint-find-rules-output-to-json.mjs",

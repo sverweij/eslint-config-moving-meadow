@@ -8,6 +8,7 @@ let gRuleSet = {
     "./rule-sets/mandatory/import",
     "./rule-sets/mandatory/unicorn",
     "plugin:budapestian/recommended",
+    "./rule-sets/mandatory/comments",
   ],
 };
 
