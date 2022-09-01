@@ -6,63 +6,44 @@ on:
       - main
   pull_request:
 
+env:
+  NODE_LATEST: 18.x
+  CI: true
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   check:
     strategy:
       fail-fast: false
       matrix:
         node-version:
-          - 12.x
           - 14.x
           - 16.x
-          - 17.x
+          - 18.x
         platform:
           - ubuntu-latest
 
     runs-on: ${{matrix.platform}}
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - name: cache node modules for ${{matrix.node-version}}@${{matrix.platform}}
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: node_modules
           key: ${{matrix.node-version}}@${{matrix.platform}}-build-${{hashFiles('package.json')}}
           restore-keys: |
             ${{matrix.node-version}}@${{matrix.platform}}-build-
       - name: set up node ${{matrix.node-version}}@${{matrix.platform}}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node-version}}
-      - name: install & build
-        run: |
-          node --version
-          # hack to prevent engine compatibility stuff for a depDev that we don't use on the CI
-          npm install upem@6
-          npm install
-        shell: bash
-        env:
-          CI: true
-      - name: lint
-        run: |
-          node --version
-          npm run lint
-        if: matrix.platform == 'ubuntu-latest' && matrix.node-version == '16.x'
-        shell: bash
-        env:
-          CI: true
+      - run: npm install
+      - run: npm run lint
+        if: matrix.platform == 'ubuntu-latest' && matrix.node-version == env.NODE_LATEST
       # - name: config-completeness
-      #   run: |
-      #     node --version
-      #     npm run config-completeness
-      #   shell: bash
-      #   env:
-      #     CI: true
-      - name: test
-        run: |
-          node --version
-          npm test
-        shell: bash
-        env:
-          CI: true
+      #   run: npm run config-completeness
+      - run: npm test
