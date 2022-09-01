@@ -169,6 +169,9 @@ module.exports = {
     "getter-return": "error",
     "no-async-promise-executor": "warn",
     "no-await-in-loop": "warn",
+    "no-constant-binary-expression": "warn",
+    "no-unused-private-class-members": "warn",
+    "prefer-object-has-own": "warn",
     // "no-buffer-constructor": "warn", // deprecated, should bin in node/... but isn't yet
     "no-compare-neg-zero": "warn",
     "no-constructor-return": "warn",

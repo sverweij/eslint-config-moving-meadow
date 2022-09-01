@@ -1,9 +1,9 @@
 module.exports = {
   plugins: ["mocha"],
   rules: {
-    // mocha
     "mocha/handle-done-callback": "error", // - enforces handling of callbacks for async tests
     "mocha/max-top-level-suites": ["warn", { limit: 10 }], // limit the number of top-level suites in a single file
+    "mocha/no-empty-description": "error",
     "mocha/no-exclusive-tests": "error", // disallow exclusive mocha tests
     "mocha/no-global-tests": "error", // disallow global tests
     "mocha/no-hooks": "off", // disallow hooks
@@ -23,6 +23,6 @@ module.exports = {
     "mocha/no-return-from-async": "warn",
     "mocha/no-setup-in-describe": "off",
     "mocha/prefer-arrow-callback": "warn",
-    "mocha/no-exports": "error"
-  }
+    "mocha/no-exports": "error",
+  },
 };
