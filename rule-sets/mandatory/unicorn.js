@@ -89,14 +89,14 @@ module.exports = {
     "unicorn/prefer-event-target": "warn",
     "unicorn/prefer-export-from": "warn",
     "unicorn/prefer-json-parse-buffer": "warn",
-    "unicorn/prefer-logical-operator-over-ternary": "warn",
+    "unicorn/prefer-logical-operator-over-ternary": "off", // just no
     "unicorn/prefer-modern-math-apis": "warn",
-    "unicorn/prefer-module": "warn",
+    "unicorn/prefer-module": "off", // nice in unicorn & rainbow land, but in practice: not doable
     "unicorn/prefer-native-coercion-functions": "warn",
     "unicorn/prefer-node-protocol": "warn",
     "unicorn/prefer-object-from-entries": "warn",
     "unicorn/prefer-prototype-methods": "warn",
-    "unicorn/prefer-regexp-test": "warn",
+    "unicorn/prefer-regexp-test": "off", // not sure why this is a rule or preference. string.match looks fine to me?
     "unicorn/prefer-switch": "warn",
     "unicorn/prefer-top-level-await": "warn",
     "unicorn/relative-url-style": "warn",
