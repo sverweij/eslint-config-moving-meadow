@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require("node:fs");
 
 function isDevelopmentDependency(pManifest, pDependencyName) {
   // eslint-disable-next-line security/detect-object-injection
@@ -37,7 +37,6 @@ function conditionallyExtendRuleSet(
   let lReturnValue = { ...pRuleSet };
 
   if (isDevelopmentDependency(pManifest, pOptionalRuleSetName)) {
-    // eslint-disable-next-line unicorn/prefer-spread
     lReturnValue.extends = (pRuleSet.extends || []).concat(
       `./rule-sets/optional/${pOptionalRuleSetName}.js`
     );

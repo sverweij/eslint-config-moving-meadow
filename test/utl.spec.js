@@ -1,5 +1,5 @@
 /* eslint-disable max-lines-per-function */
-const path = require("path");
+const path = require("node:path");
 const {
   getManifest,
   isDevelopmentDependency,

@@ -9,7 +9,7 @@ module.exports = {
     /* static analysis  */ "import/no-dynamic-require": "error",
     /* static analysis  */ "import/no-import-module-exports": "error",
     /* static analysis  */ "import/no-internal-modules": "off",
-    /* static analysis  */ "import/no-relative-parent-imports": "error",
+    /* static analysis  */ "import/no-relative-parent-imports": "off",
     /* static analysis  */ "import/no-relative-packages": "off",
     /* static analysis  */ "import/no-restricted-paths": "off",
     /* static analysis  */ "import/no-self-import": "error",

@@ -163,7 +163,7 @@ module.exports = {
     "prefer-spread": "error",
     "prefer-template": "error",
     "require-yield": "error",
-    "sort-imports": "error",
+    "sort-imports": "off", // we're using import/order which works better, but also conflicts with sort-imports
 
     // new rules in the waiting chamber
     "getter-return": "error",
@@ -171,7 +171,7 @@ module.exports = {
     "no-await-in-loop": "warn",
     "no-constant-binary-expression": "warn",
     "no-unused-private-class-members": "warn",
-    "prefer-object-has-own": "warn",
+    "prefer-object-has-own": "off", // works as of node 16
     // "no-buffer-constructor": "warn", // deprecated, should bin in node/... but isn't yet
     "no-compare-neg-zero": "warn",
     "no-constructor-return": "warn",

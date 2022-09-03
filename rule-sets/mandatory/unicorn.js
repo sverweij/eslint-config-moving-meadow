@@ -41,15 +41,15 @@ module.exports = {
     "unicorn/prefer-dom-node-remove": "error",
     "unicorn/prefer-query-selector": "error",
     "unicorn/prefer-reflect-apply": "error",
-    "unicorn/prefer-spread": "error",
+    "unicorn/prefer-spread": "off",
     "unicorn/prefer-string-starts-ends-with": "error",
-    "unicorn/prefer-string-slice": "error",
+    "unicorn/prefer-string-slice": "off", // autofix doesn't seem water tight + not sure why this would be better
     "unicorn/prefer-dom-node-text-content": "error",
     "unicorn/prefer-string-trim-start-end": "error",
     "unicorn/prefer-type-error": "error",
     "unicorn/prevent-abbreviations": "error",
     "unicorn/throw-new-error": "error",
-    "unicorn/no-null": "warn",
+    "unicorn/no-null": "off",
     "unicorn/prefer-number-properties": "error",
     "unicorn/prefer-string-replace-all": "off", // => replaceAll is a tc39 proposal. Not available in node <= 14
     "unicorn/prefer-set-has": "off", // => questionable performance improvement to use set.has over array.includes ()
@@ -65,7 +65,7 @@ module.exports = {
     "unicorn/prefer-array-some": "warn",
     "unicorn/prefer-default-parameters": "off",
     "unicorn/consistent-destructuring": "warn",
-    "unicorn/no-array-for-each": "warn",
+    "unicorn/no-array-for-each": "off", // understand the sentiment of misuse, but in some cases it's more elegant to use this
     "unicorn/no-array-method-this-argument": "warn",
     "unicorn/no-array-push-push": "warn",
     "unicorn/no-await-expression-member": "warn",
@@ -84,14 +84,14 @@ module.exports = {
     "unicorn/no-useless-switch-case": "warn",
     "unicorn/prefer-array-flat": "warn",
     "unicorn/prefer-array-index-of": "warn",
-    "unicorn/prefer-at": "warn",
+    "unicorn/prefer-at": "off", // only works as of node 16
     "unicorn/prefer-code-point": "warn",
-    "unicorn/prefer-event-target": "warn",
+    "unicorn/prefer-event-target": "off", // suggested over event emitter. The two aren't compatible (https://nodejs.org/api/events.html#eventtarget-and-event-api), though and the reasons stated (browser/ deno compatibility) are not interesting for us
     "unicorn/prefer-export-from": "warn",
-    "unicorn/prefer-json-parse-buffer": "warn",
+    "unicorn/prefer-json-parse-buffer": "off", // sometimes makes sense. sometimes not.
     "unicorn/prefer-logical-operator-over-ternary": "off", // just no
     "unicorn/prefer-modern-math-apis": "warn",
-    "unicorn/prefer-module": "off", // nice in unicorn & rainbow land, but in practice: not doable
+    "unicorn/prefer-module": "off", // nice in unicorn & rainbow land, but not doable in the real world
     "unicorn/prefer-native-coercion-functions": "warn",
     "unicorn/prefer-node-protocol": "warn",
     "unicorn/prefer-object-from-entries": "warn",
