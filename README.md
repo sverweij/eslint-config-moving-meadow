@@ -27,6 +27,6 @@ of them if your project uses both of them :open_mouth:).
 
 ## Flare'n status section
 
-[![lint and test](https://github.com/sverweij/eslint-config-moving-meadow/workflows/lint%20and%20test/badge.svg)](https://github.com/sverweij/eslint-config-moving-meadow/actions?query=workflow%3A%22lint+and+test%22)
+[![ci](https://github.com/sverweij/eslint-config-moving-meadow/workflows/ci/badge.svg)](https://github.com/sverweij/eslint-config-moving-meadow/actions?query=workflow%3A%22ci%22)
 [![npm stable version](https://img.shields.io/npm/v/eslint-config-moving-meadow.svg?logo=npm)](https://npmjs.com/package/eslint-config-moving-meadow)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
