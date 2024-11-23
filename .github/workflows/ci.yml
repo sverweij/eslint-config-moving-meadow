@@ -1,4 +1,4 @@
-name: lint and test
+name: ci
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   pull_request:
 
 env:
-  NODE_LATEST: 18.x
+  NODE_LATEST: 23.x
   CI: true
 
 defaults:
@@ -20,25 +20,24 @@ jobs:
       fail-fast: false
       matrix:
         node-version:
-          - 14.x
-          - 16.x
-          - 18.x
+          - 20.x
+          - 23.x
         platform:
           - ubuntu-latest
 
     runs-on: ${{matrix.platform}}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: cache node modules for ${{matrix.node-version}}@${{matrix.platform}}
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{matrix.node-version}}@${{matrix.platform}}-build-${{hashFiles('package.json')}}
           restore-keys: |
             ${{matrix.node-version}}@${{matrix.platform}}-build-
       - name: set up node ${{matrix.node-version}}@${{matrix.platform}}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{matrix.node-version}}
       - run: npm install
