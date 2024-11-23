@@ -8,13 +8,13 @@ eslint configuration for some of my projects. You might not want to use this
 When using mocha :coffee: :
 
 ```sh
-npm install --save-dev eslint-plugin-mocha eslint-plugin-budapestian eslint-plugin-import eslint-plugin-node eslint-plugin-security eslint-plugin-unicorn eslint-config-prettier eslint-plugin-eslint-comments eslint-config-moving-meadow
+npm install --save-dev eslint-plugin-mocha eslint-plugin-budapestian eslint-plugin-import eslint-plugin-n eslint-plugin-security eslint-plugin-unicorn eslint-config-prettier eslint-plugin-eslint-comments eslint-config-moving-meadow
 ```
 
 When using jest :black_joker: :
 
 ```sh
-npm install --save-dev eslint-plugin-jest eslint-plugin-budapestian eslint-plugin-import eslint-plugin-node eslint-plugin-security eslint-plugin-unicorn eslint-config-prettier eslint-plugin-eslint-comments eslint-config-moving-meadow
+npm install --save-dev eslint-plugin-jest eslint-plugin-budapestian eslint-plugin-import eslint-plugin-n eslint-plugin-security eslint-plugin-unicorn eslint-config-prettier eslint-plugin-eslint-comments eslint-config-moving-meadow
 ```
 
 When using `yarn` replace `npm install --save-dev` with `yarn add -D`

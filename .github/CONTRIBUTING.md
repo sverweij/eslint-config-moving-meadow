@@ -19,7 +19,7 @@ a [FAQ](../doc/faq.md) that might help you out.
 - In turn, we try to **respond within a week**.  
   This might or might not include an actual code fix.
 - If there's something that doesn't fit an issue, feel free to contact us on
-  twitter [@depcruise](https://twitter.com/depcruise).
+  Mastodon: [@mcmeadow@mstdn.social](https://mstdn.social/@mcmeadow).
 
 ### Contributing code
 
