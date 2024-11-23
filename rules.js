@@ -14,5 +14,5 @@ let gRuleSet = {
 
 module.exports = conditionallyExtendRuleSet(
   conditionallyExtendRuleSet(gRuleSet, "mocha"),
-  "jest"
+  "jest",
 );

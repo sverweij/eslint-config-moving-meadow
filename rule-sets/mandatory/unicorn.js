@@ -24,7 +24,6 @@ module.exports = {
     "unicorn/no-object-as-default-parameter": "warn",
     "unicorn/no-process-exit": "error",
     "unicorn/no-unreadable-array-destructuring": "error",
-    "unicorn/no-unsafe-regex": "error",
     "unicorn/no-unused-properties": "error",
     "unicorn/no-useless-undefined": "warn",
     "unicorn/no-zero-fractions": "error",
@@ -98,7 +97,7 @@ module.exports = {
     "unicorn/prefer-prototype-methods": "warn",
     "unicorn/prefer-regexp-test": "off", // not sure why this is a rule or preference. string.match looks fine to me?
     "unicorn/prefer-switch": "warn",
-    "unicorn/prefer-top-level-await": "warn",
+    "unicorn/prefer-top-level-await": "off", // only works as of node 16 (or 18?)
     "unicorn/relative-url-style": "warn",
     "unicorn/require-array-join-separator": "warn",
     "unicorn/require-number-to-fixed-digits-argument": "warn",

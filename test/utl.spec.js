@@ -1,5 +1,7 @@
 /* eslint-disable max-lines-per-function */
 const path = require("node:path");
+const { describe, expect, it } = require("@jest/globals");
+
 const {
   getManifest,
   isDevelopmentDependency,
@@ -10,21 +12,25 @@ describe("utl.getManifest", () => {
   it("returns an empty object when presented with a non-existant file", () => {
     expect(getManifest("")).toStrictEqual({});
   });
+
   it("returns an empty object when presented with an empty file", () => {
     expect(
-      getManifest(path.join(__dirname, "mocks", "empty-file"))
+      getManifest(path.join(__dirname, "mocks", "empty-file")),
     ).toStrictEqual({});
   });
+
   it("returns an empty object when presented with an empty json", () => {
     expect(
-      getManifest(path.join(__dirname, "mocks", "empty.json"))
+      getManifest(path.join(__dirname, "mocks", "empty.json")),
     ).toStrictEqual({});
   });
+
   it("returns the contents of the json file as an object when valid json", () => {
     expect(
-      getManifest(path.join(__dirname, "mocks", "dev-dependencies.json"))
+      getManifest(path.join(__dirname, "mocks", "dev-dependencies.json")),
     ).toStrictEqual({ devDependencies: {} });
   });
+
   it("takes the current working directory's package.json as the default", () => {
     expect(getManifest().name).toBe("eslint-config-moving-meadow");
   });
@@ -34,20 +40,22 @@ describe("utl.isDevDependency", () => {
   it("returns false presented with a package name and no devDependencies in the manifest", () => {
     expect(isDevelopmentDependency({}, "does-not-exist")).toBe(false);
   });
+
   it("returns false when presented with a package name that doesn't occur in the devDependencies", () => {
     expect(
       isDevelopmentDependency(
         { devDependencies: { exists: "1.2.3" } },
-        "does-not-exist"
-      )
+        "does-not-exist",
+      ),
     ).toBe(false);
   });
+
   it("returns true when presented with a package name that occurs in the devDependencies", () => {
     expect(
       isDevelopmentDependency(
         { devDependencies: { exists: "1.2.3" } },
-        "exists"
-      )
+        "exists",
+      ),
     ).toBe(true);
   });
 });
@@ -56,20 +64,23 @@ describe("utl.conditionallyExtendRuleSet", () => {
   it("empty rule set, with empty optional rule set and empty manifest => {}", () => {
     expect(conditionallyExtendRuleSet({}, "optional", {})).toStrictEqual({});
   });
+
   it("empty rule set, with empty optional rule set name that doesn't occur in the manifest => {}", () => {
     expect(
       conditionallyExtendRuleSet({}, "optional", {
         devDependencies: { exists: "1.2.3" },
-      })
+      }),
     ).toStrictEqual({});
   });
+
   it("empty rule set, with empty optional rule set name that occurs in the manifest => extend on the optional rule est", () => {
     expect(
       conditionallyExtendRuleSet({}, "optional", {
         devDependencies: { exists: "1.2.3", optional: "4.5.6" },
-      })
+      }),
     ).toStrictEqual({ extends: ["./rule-sets/optional/optional.js"] });
   });
+
   it("non-empty rule set, with an optional rule set name that occurs in the manifest => extend on the optional rule est", () => {
     expect(
       conditionallyExtendRuleSet(
@@ -81,14 +92,15 @@ describe("utl.conditionallyExtendRuleSet", () => {
         "optional",
         {
           devDependencies: { exists: "1.2.3", optional: "4.5.6" },
-        }
-      )
+        },
+      ),
     ).toStrictEqual({
       extends: ["security", "./rule-sets/optional/optional.js"],
       plugins: ["security"],
       rules: { "security/be-smart": "error" },
     });
   });
+
   it("non-empty rule set, with an optional rule set name that occurs in the default manifest => extend on the optional rule set", () => {
     expect(
       conditionallyExtendRuleSet(
@@ -97,14 +109,15 @@ describe("utl.conditionallyExtendRuleSet", () => {
           plugins: ["security"],
           rules: { "security/be-smart": "error" },
         },
-        "jest"
-      )
+        "jest",
+      ),
     ).toStrictEqual({
       extends: ["security", "./rule-sets/optional/jest.js"],
       plugins: ["security"],
       rules: { "security/be-smart": "error" },
     });
   });
+
   it("non-empty rule set, with an optional rule set name that does not occur in the default manifest => rule set remains as-is", () => {
     expect(
       conditionallyExtendRuleSet(
@@ -113,8 +126,8 @@ describe("utl.conditionallyExtendRuleSet", () => {
           plugins: ["security"],
           rules: { "security/be-smart": "error" },
         },
-        "mocha"
-      )
+        "mocha",
+      ),
     ).toStrictEqual({
       extends: ["security"],
       plugins: ["security"],

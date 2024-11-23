@@ -14,7 +14,7 @@ function getManifest(pManifestFileName = "./package.json") {
     lManifestFileText = fs.readFileSync(pManifestFileName, "utf8");
   } catch (pError) {
     process.stderr.write(
-      `eslint-config-moving-meadow: couldn't read '${pManifestFileName}' to determine optional rules - assuming none are necessary\n`
+      `eslint-config-moving-meadow: couldn't read '${pManifestFileName}' to determine optional rules - assuming none are necessary\n`,
     );
   }
 
@@ -22,7 +22,7 @@ function getManifest(pManifestFileName = "./package.json") {
     lReturnValue = JSON.parse(lManifestFileText);
   } catch (pError) {
     process.stderr.write(
-      `eslint-config-moving-meadow: using '${pManifestFileName}' to determine optional rules, but it doesn't seem to be valid json - assuming none are necessary\n`
+      `eslint-config-moving-meadow: using '${pManifestFileName}' to determine optional rules, but it doesn't seem to be valid json - assuming none are necessary\n`,
     );
   }
 
@@ -32,13 +32,13 @@ function getManifest(pManifestFileName = "./package.json") {
 function conditionallyExtendRuleSet(
   pRuleSet,
   pOptionalRuleSetName,
-  pManifest = getManifest()
+  pManifest = getManifest(),
 ) {
   let lReturnValue = { ...pRuleSet };
 
   if (isDevelopmentDependency(pManifest, pOptionalRuleSetName)) {
     lReturnValue.extends = (pRuleSet.extends || []).concat(
-      `./rule-sets/optional/${pOptionalRuleSetName}.js`
+      `./rule-sets/optional/${pOptionalRuleSetName}.js`,
     );
   }
   return lReturnValue;
